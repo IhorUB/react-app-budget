@@ -6,6 +6,7 @@ const AddBudgetModal = ({show, handleClose}) => {
   const nameRef = useRef();
   const maxRef = useRef();
   const {addBudget} = useBudget();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addBudget({
@@ -44,12 +45,13 @@ const AddBudgetModal = ({show, handleClose}) => {
               type='number'
               min={0}
               step={0.01}
-              required/>
+              required
+            />
           </Form.Group>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary">Close</Button>
+          <Button variant="secondary" onClick={() => handleClose()}>Close</Button>
           <Button variant="primary" type='submit'>Save changes</Button>
         </Modal.Footer>
       </Form>
